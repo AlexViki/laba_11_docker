@@ -1,12 +1,10 @@
 FROM ubuntu:18.04
 
-RUN apt-get -y update
-RUN apt-get -y install nginx
+RUN apt-get -y update && apt-get -y install nginx && apt-get -y install git
 
-RUN echo 'Hello World from Docker!' > /var/www/html/index.html
+RUN git -C /var/www/html clone https://github.com/AlexViki/appToDoList.git
 
-
-CMD ["/usr/sbin/apache2ctl", "-D","FOREGROUND"]
+#RUN echo 'Hello World from Docker!' > /var/www/html/index.html
 
 RUN service nginx restart
 

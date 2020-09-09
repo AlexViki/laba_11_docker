@@ -1,6 +1,9 @@
 # laba 11 Install docker, run images, create image
 
-- Check your version docker: "docker --version" or "sudo systemctl status docker"
+### Check your version docker: 
+`docker --version`
+`sudo systemctl status docker`
+`docker info`
 
 #### Run docker without sudo:
 - check if docker group exists: cat /etc/group | grep docker; 

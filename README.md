@@ -5,6 +5,32 @@
 `sudo systemctl status docker`
 `docker info`
 
+### Stop all running containers:
+`docker stop $(docker ps -a -q)`
+
+### Delete all unrunning containers:
+`docker rm <your-image-id>`
+`docker rm $(docker ps -a -q)`
+
+### To remove the image:
+`docker rmi <your-image-id>`
+
+### Remove multiple images:
+`docker rmi <your-image-id>`
+`docker rmi $(docker images -q)`
+
+`docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.CreatedAt}}\t{{.Names}}"`
+
+### Docker run vs start
+`docker run = docker create + docker start + docker attach`
+
+#### Run bash in container
+`docker exec -it 92598c51c879 bash`
+
+### Connect CLI to created container
+`docker attach 92598c51c879`
+Disconnect from container: Ctrl + p, Ctrl + q
+
 #### Run docker without sudo:
 - check if docker group exists: cat /etc/group | grep docker; 
 - if it doesn't, create with this command: sudo groupadd docker

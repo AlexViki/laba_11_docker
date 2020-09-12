@@ -51,3 +51,20 @@ Disconnect from container: Ctrl + p, Ctrl + q
 - docker rmi; delete image
 - docker rm -f $(docker ps -aq); delete all Containers
 - docker rmi -f $(docker images -q); delete all Images
+
+
+## 2
+`export GOOGLE_PROJECT=learn-docker`
+
+`docker-machine create --driver google --google-machine-image https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts --google-machine-type n1-standard-1 --google-zone europe-west3-c --google-project learn-docker docker-host-web`
+
+### Check the list of created containers
+`docker-machine ls `
+
+### switching between containers in GCP Cloud via:
+`eval $(docker-machine env docker-host)` - in GCP
+`eval $(docker-machine env --unset)` - local docker
+
+### Delete:
+`docker-machine rm <name>`
+

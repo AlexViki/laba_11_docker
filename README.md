@@ -31,6 +31,17 @@
 `docker attach 92598c51c879`
 Disconnect from container: Ctrl + p, Ctrl + q
 
+### Login to DockerHub
+`docker rmi`
+`docker tag web-app:latest alex2viki/app-to-do-list:1.0`
+`docker push alex2viki/app-to-do-list:1.0`
+
+### Info about image in DockerHub
+`docker inspect alex2viki/app-to-do-list:1.0`
+
+### Run image from DockerHub
+`docker run --name reddit -d -p 80:80 alex2viki/app-to-do-list:1.0`
+
 #### Run docker without sudo:
 - check if docker group exists: cat /etc/group | grep docker; 
 - if it doesn't, create with this command: sudo groupadd docker

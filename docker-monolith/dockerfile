@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y git nginx apt-utils
 RUN rm -rf /var/www/html
 #RUN git clone https://github.com/AlexViki/appToDoList.git /var/www/html/
 
-COPY nginx.conf /etc/nginx/sites-available/default
+COPY nginx_app.conf /etc/nginx/sites-available/default
 COPY nginx_htpasswd /etc/nginx/.htpasswd
 COPY start.sh /start.sh
 

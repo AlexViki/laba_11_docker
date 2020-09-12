@@ -11,4 +11,4 @@ COPY nginx_htpasswd /etc/nginx/.htpasswd
 COPY start.sh /start.sh
 
 RUN chmod 0777 /start.sh
-CMD ["/start.sh"]
+#CMD ["/start.sh"]

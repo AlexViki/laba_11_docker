@@ -1,3 +1,3 @@
 #!/bin/bash
 
-service nginx restart >> /tmp/install.log
+git clone https://github.com/AlexViki/appToDoList.git /var/www/html/
